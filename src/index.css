@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #000;
+    --fg: #fff;
+    --muted: rgba(255, 255, 255, 0.62);
+    --line: rgba(255, 255, 255, 0.14);
+    --pill: rgba(255, 255, 255, 0.28);
+    --font-sans: "Helvetica Neue", Inter, Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Shimmer animation for secondary headline line */
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #8e8e8e, #fff, #8e8e8e);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Pulsing square diamond brand mark */
+@keyframes pulse-mark {
+  0%, 100% {
+    opacity: 0.55;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.animate-pulse-mark {
+  animation: pulse-mark 3.2s ease-in-out infinite;
+}
+
+/* Alternating blinking animation for bottom logos */
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 4.5s ease-in-out infinite;
+}
+
+/* Vignette radial overlay exactly matching the spec */
+.vortex-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 45% at 50% 42%, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0) 62%),
+    radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Logo strip mask */
+.logo-strip-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}

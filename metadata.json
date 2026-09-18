@@ -1,0 +1,6 @@
+{
+  "name": "Vigil — Autonomous Code Review & Security",
+  "description": "Deterministic AST taint tracing, multi-agent LLM reasoning, and microVM testbeds for continuous pull request security.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
